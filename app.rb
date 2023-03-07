@@ -7,15 +7,12 @@ end
 
 # to server
 post '/' do
-  @login = params[:aaa]
-  @password = params[:bbb]
+  @user_name = params[:user_name]
+  @phone     = params[:phone]
+  @date_time = params[:date_time]
 
-  p @login
-  p @password
+  @title = 'Thank you!'
+  @message = "Dear #{@user_name}, we'll wait gor you at #{@date_time}"
 
-  if @login == 'admin' && @password == 'secret'
-    erb :welcome
-  else
-    erb :index
-  end
+  erb :welcome
 end
